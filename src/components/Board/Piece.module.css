@@ -1,0 +1,72 @@
+.piece {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  transition: transform var(--dur-piece) var(--ease-snappy);
+  will-change: transform;
+  z-index: var(--z-pieces);
+  touch-action: none;
+}
+
+.piece::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: var(--piece-face);
+  border: 1px solid var(--piece-edge);
+  box-shadow:
+    0 1px 1px rgba(0, 0, 0, 0.1),
+    0 2px 6px var(--piece-shadow);
+}
+
+.piece::after {
+  content: '';
+  position: absolute;
+  inset: 9%;
+  border-radius: 50%;
+  background: var(--piece-face-inner);
+  border: 1px solid var(--piece-edge-inner);
+}
+
+.text {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-piece);
+  font-weight: 500;
+  line-height: 1;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.red .text {
+  color: var(--piece-text-red);
+}
+
+.black .text {
+  color: var(--piece-text-black);
+}
+
+.selected {
+  z-index: var(--z-pieces);
+}
+
+.selected::before {
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.14),
+    0 6px 14px var(--piece-shadow);
+}
+
+.dragging {
+  transition: none;
+  z-index: var(--z-piece-drag);
+}
+
+.dragging::before {
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.22),
+    0 14px 30px var(--piece-shadow);
+}

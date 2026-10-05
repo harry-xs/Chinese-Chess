@@ -1,0 +1,172 @@
+.page {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: var(--space-6) var(--space-4);
+  overflow-y: auto;
+}
+
+.inner {
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--space-6);
+  padding-block: var(--space-8);
+}
+
+.header {
+  text-align: center;
+}
+
+.title {
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.subtitle {
+  margin-top: var(--space-2);
+  font-size: 13px;
+  letter-spacing: 0.28em;
+  color: var(--color-text-tertiary);
+  text-transform: uppercase;
+}
+
+.resume {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 52px;
+  padding: 0 var(--space-5);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  border: 1px solid var(--color-separator);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  transition: transform var(--dur-instant) var(--ease-out);
+}
+
+.resume:active {
+  transform: scale(0.98);
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.label {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.6px;
+  color: var(--color-text-tertiary);
+}
+
+.disc {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-piece);
+  font-size: 12px;
+  background: var(--piece-face);
+  border: 1px solid var(--piece-edge);
+  box-shadow: var(--shadow-xs);
+}
+
+.red {
+  color: var(--piece-text-red);
+}
+
+.black {
+  color: var(--piece-text-black);
+}
+
+.levels {
+  background: var(--color-surface);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-separator);
+  overflow: hidden;
+}
+
+.level {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  width: 100%;
+  min-height: 60px;
+  padding: var(--space-3) var(--space-4) var(--space-3) calc(var(--space-4) + 6px);
+  text-align: left;
+  border-top: 1px solid var(--color-separator);
+  transition: background-color var(--dur-fast) var(--ease-out);
+}
+
+.level:first-child {
+  border-top: none;
+}
+
+.level:active {
+  background: var(--color-surface-sunken);
+}
+
+.levelBar {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 2px;
+  height: 0;
+  border-radius: 0 2px 2px 0;
+  background: var(--color-accent);
+  transform: translateY(-50%);
+  transition: height var(--dur-base) var(--ease-spring);
+}
+
+.levelActive .levelBar {
+  height: 26px;
+}
+
+.levelText {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.levelName {
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+.levelActive .levelName {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.levelHint {
+  font-size: 13px;
+  color: var(--color-text-tertiary);
+}
+
+.levelCheck {
+  color: var(--color-accent);
+  animation: checkIn var(--dur-fast) var(--ease-out);
+}
+
+@keyframes checkIn {
+  from {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+}
+
+.footer {
+  padding-bottom: var(--space-4);
+}

@@ -1,0 +1,45 @@
+.bar {
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-text-secondary);
+  animation: breathe 1.4s var(--ease-in-out) infinite;
+}
+
+@keyframes breathe {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.text {
+  font-size: 14px;
+  font-weight: 500;
+  animation: fade var(--dur-fast) var(--ease-out);
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+}
+
+.thinking {
+  color: var(--color-text-secondary);
+}
+
+.check {
+  color: var(--color-accent);
+}

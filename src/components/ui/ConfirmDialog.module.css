@@ -1,0 +1,24 @@
+.body {
+  padding: var(--space-6) var(--space-5) var(--space-5);
+  text-align: center;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+}
+
+.message {
+  margin-top: var(--space-2);
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+.actions {
+  margin-top: var(--space-5);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+}

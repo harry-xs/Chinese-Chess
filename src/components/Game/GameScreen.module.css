@@ -1,0 +1,14 @@
+.screen {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 1024px) {
+  .screen {
+    max-width: 1080px;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
